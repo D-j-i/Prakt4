@@ -1,0 +1,76 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace WpfApp2.Pages
+{
+    /// <summary>
+    /// Логика взаимодействия для Page4.xaml
+    /// </summary>
+    public partial class Page4 : Page
+    {
+        public Page4()
+        {
+            InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            double a = double.Parse(Box1.Text);
+            double b = double.Parse(Box2.Text);
+            double c = double.Parse(Box3.Text);
+
+            if (a>b && a > c)
+            {
+                if (Math.Pow(a, 2) == Math.Pow(b, 2) + Math.Pow(c, 2))
+                {
+                    MessageBox.Show("Треугольник прямоугольный", "Ответ", MessageBoxButton.OK, MessageBoxImage.Information );
+                }
+                else
+                {
+                    MessageBox.Show("Треугольник не прямоугольный", "Ответ", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            else if (b>a && b > c)
+            {
+                if (Math.Pow(b, 2) == Math.Pow(a, 2) + Math.Pow(c, 2))
+                {
+                    MessageBox.Show("Треугольник прямоугольный", "Ответ", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Треугольник не прямоугольный", "Ответ", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            else if (c>a && c > b) 
+            {
+                if (Math.Pow(c, 2) == Math.Pow(b, 2) + Math.Pow(a, 2))
+                {
+                    MessageBox.Show("Треугольник прямоугольный", "Ответ", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Треугольник не прямоугольный", "Ответ", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            else    
+            {
+                MessageBox.Show("Треугольник не прямоугольный", "Ответ", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            
+            
+        }
+    }
+}
